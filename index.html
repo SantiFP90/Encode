@@ -12,20 +12,22 @@
     <div class="contPrincipal">
         <img src="./images/shark.jpg" class="shark" alt="Shark">
         <h1 class="login">Login Shark Access</h1>
-        <form class="form">
+        <form class="form" id="formulario">
             <div>
                 <label><img class="iconito" src="./images/icon.png" alt="Usuario"></label>
-                <input placeholder="Username" class="input" id="usuario" >
+                <input placeholder="Username" class="input" id="usuario" name="usuario">
+                <div id="incorrectoUser" class="errores"></div>
             </div>
             <div>
                 <label><img class="iconito" src="./images/crab.png" alt="Contraseña"></label>
-                <input placeholder="Password" class="input" id="contraseña"  maxlength="4" type="password">
+                <input placeholder="Password" class="input" id="contraseña"  maxlength="4" type="password" name="contraseña">
+                <div id="incorrectoPass"  class="errores"></div>
             </div>
             <div class="passwordOpciones">
                 <label class="switch">
-                    <input type="checkbox">
+                    <input type="checkbox" id="check">
                     <span class="slider"></span>
-                    <a href="#">Remember Me</a>
+                    <a href="#" id="remember">Remember Me</a>
                 </label>
                     <a href="#">Forgot Password</a>
             </div>

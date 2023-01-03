@@ -1,44 +1,94 @@
 const user = document.querySelector('#usuario');
 const pass = document.querySelector('#contraseña');
-const inp = document.querySelectorAll('.input');
+const inp = document.querySelectorAll('#formulario input');
 const login = document.querySelector('#login');
-const exp =  /^[a-zA-Z0-9\_\-]{3,16}$/
+const exp = /^[a-zA-Z0-9]{4,16}$/
+const expN = /^[0-9]*(\.?)[ 0-9]+$/
 
-// inp[0].addEventListener('keyup', (e)=>{
-//     e.preventDefault();
-//     if(exp.test(user.value)){
-//         console.log('Guardo usuario')}
-//     else{
-//         console.log('Usuario incorrecto')
-//     }
-// })
 
-// inp[1].addEventListener('keyup', (e)=>{
-//     e.preventDefault();
-//     if(pass.value.length===4 && !isNaN(pass.value)){
-//         console.log('Guardo Contraseña')
-//     }else{
-//         console.log('Error contraseña')
-//     }
-// })
-
-login.addEventListener('click', (e)=>{
+//Cambiar color login
+check.addEventListener('change', (e)=>{
     e.preventDefault();
-    if(exp.test(user.value)){
-        console.log('Guardo usuario')}
-    else{
-        console.log('Usuario incorrecto')
-    }
-})
-
-login.addEventListener("click", (e)=>{
-    e.preventDefault();
-    if(pass.value.length===4 && !isNaN(pass.value)){
-        console.log('Guardo Contraseña')
+    if(e.target.checked === true){
+        login.classList.add('rec')
+        remember.classList.add('rec1')
     }else{
-        console.log('Error contraseña')
+        login.classList.remove('rec')
+        remember.classList.remove('rec1')
     }
 })
+
+//Validar Campos
+const validarForm = (e) =>{
+    switch (e.target.name) {
+        case "usuario":
+            if (exp.test(e.target.value)) {
+                document.getElementById("incorrectoUser").innerHTML =``
+                habilitarLogin()
+
+            }else{
+                document.getElementById("incorrectoUser").innerHTML =`
+                <p>Usuario incorrecto </p>
+                `
+            }
+            break;
+
+        case "contraseña":
+            if (expN.test(e.target.value)) {
+                document.getElementById("incorrectoPass").innerHTML =``
+                habilitarLogin()
+
+            }else{
+                document.getElementById("incorrectoPass").innerHTML =`
+                <p>Constraseña incorrecta </p>
+                `
+            }
+            break;
+    }
+}
+
+inp.addEventListener('keyup', habilitarLogin)
+
+//Valida si escribe
+inp.forEach((input) => {
+    input.addEventListener('keyup', validarForm);
+    input.addEventListener('blur', validarForm);
+});
+
+
+
+//Activar boton login
+
+let e1= 0;
+let e2=0;
+
+function habilitarLogin() {
+    if(user.value === ''){
+        e1++;
+    }
+    if(pass.value === ''){
+        e2++;
+    }
+    if(e1 === 0 && e2 === 0){
+        login.value.disabled = false;
+        console.log('aca1')
+    }else{
+        login.value.disabled = true;
+        console.log('aca2')
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // hacer la busqueda de num y letra con dos expresiones regulares
