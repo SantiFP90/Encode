@@ -15,12 +15,12 @@
         <form class="form" id="formulario">
             <div>
                 <label><img class="iconito" src="./images/icon.png" alt="Usuario"></label>
-                <input placeholder="Username" class="input" id="usuario" name="usuario">
+                <input placeholder="Username" class="input" id="usuario" name="usuario" required>
                 <div id="incorrectoUser" class="errores"></div>
             </div>
             <div>
                 <label><img class="iconito" src="./images/crab.png" alt="Contraseña"></label>
-                <input placeholder="Password" class="input" id="contraseña"  maxlength="4" type="password" name="contraseña">
+                <input placeholder="Password" class="input" id="contraseña"  maxlength="4" type="password" name="contraseña" required>
                 <div id="incorrectoPass"  class="errores"></div>
             </div>
             <div class="passwordOpciones">
@@ -37,6 +37,12 @@
             </div>
         </form>
     </div>
+    <section class="modal" id="mostrarModal">
+        <div class="modalContenedor">
+            <h2 class="modalTitulo">¡WELCOME!</h2>
+            <a href="#" id="cerrarModal">close</a>
+        </div>
+    </section>
     <script src="index.js"></script> 
 </body>
 </html>
