@@ -46,8 +46,14 @@ body{
 
 .login {
     color: whitesmoke;
+    text-transform: uppercase;
+    font-weight: bold;
     text-align: center;
     font-size: x-large;
+    /* background-image: url(./images/giphy.gif);
+    background-size: cover;
+    background-position: center;
+    border-radius: 3px; */
 }
 
 .iconito {

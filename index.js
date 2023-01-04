@@ -81,6 +81,7 @@ function loginClose(){
 // })
 
 document.querySelector('form').addEventListener('submit', (e)=>{
+    e.preventDefault();
     if(ok != 0){
         console.log('envio')
         loginOpen();
