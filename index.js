@@ -89,3 +89,22 @@ document.querySelector('form').addEventListener('submit', (e)=>{
 })
 
 cerrarModal.addEventListener('click',loginClose)
+
+
+
+//PETICIÓN FETCH
+const id= document.querySelector('#peticion');
+const solicitar = document.querySelector('#solicitar')
+
+solicitar.addEventListener('click',(e)=>{
+    const resultado=fetch(`https://jsonplaceholder.typicode.com/users/${id.value}`)
+    .then(respuestaHTTP=>{
+        console.log(respuestaHTTP);
+        return respuestaHTTP.json();
+    })
+    .then(texto=>{
+        console.log(texto);
+        alert('Bienvenido '+ texto.name + ' tu email es: ' + texto.email)
+    });
+})
+

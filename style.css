@@ -89,7 +89,32 @@ body{
     text-align: center;
 }
 
+.fetch{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+}
 
+.peticion{
+    background: none;
+    border-style: none;
+    background-color: #007696;
+    border-radius: 5px;
+    outline: none;
+    color: whitesmoke;
+    text-align: center;
+    margin: 5px;
+    height: 20px;
+}
+.solicitar{
+    color: whitesmoke;
+    text-align: center;
+    background-color: #007696;
+    border-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
 
 .passwordOpciones {
